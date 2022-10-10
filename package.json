@@ -1,0 +1,42 @@
+{
+  "name": "@obewds/icon-svg-to-vue",
+  "version": "0.1.1",
+  "description": "Tiny node-based utility scripts to automate converting icon svg markup to vue and typescript components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script": "node dist/icon-svg-to-vue.mjs",
+    "changelog": "auto-changelog --package --unreleased --backfill-limit 20",
+    "bump:patch": "npm version patch && npm run changelog",
+    "bump:minor": "npm version minor && npm run changelog",
+    "bump:major": "npm version major && npm run changelog",
+    "bump:premajor": "",
+    "bump:preminor": "",
+    "bump:prepatch": "",
+    "bump:prerelease": "",
+    "bump:from-git": ""
+  },
+  "bin": {
+    "icon-svg-to-vue": "./dist/icon-svg-to-vue.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obewds/icon-svg-to-vue.git"
+  },
+  "author": "Matt McT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/obewds/icon-svg-to-vue/issues"
+  },
+  "homepage": "https://github.com/obewds/icon-svg-to-vue#readme",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "yargs": "^17.6.0"
+  },
+  "devDependencies": {
+    "auto-changelog": "^2.4.0"
+  }
+}
