@@ -1,0 +1,22 @@
+name: Add PR's or Issues to the OBEWDS tracking project
+
+on:
+  pull_request:
+    types:
+      - opened
+      # - labeled
+  issues:
+    types:
+      - opened
+      - transferred
+      # - labeled
+
+jobs:
+  add-to-project:
+    name: Add PR/Issue to OBE:WDS Project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@main
+        with:
+          project-url: https://github.com/orgs/obewds/projects/1
+          github-token: ${{ secrets.OBEWDS_ORG_VUEVENTUS_PERSONAL_ACCESS_TOKEN }}
