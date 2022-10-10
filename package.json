@@ -9,12 +9,7 @@
     "changelog": "auto-changelog --package --unreleased --backfill-limit 20",
     "bump:patch": "npm version patch && npm run changelog",
     "bump:minor": "npm version minor && npm run changelog",
-    "bump:major": "npm version major && npm run changelog",
-    "bump:premajor": "",
-    "bump:preminor": "",
-    "bump:prepatch": "",
-    "bump:prerelease": "",
-    "bump:from-git": ""
+    "bump:major": "npm version major && npm run changelog"
   },
   "bin": {
     "icon-svg-to-vue": "./dist/icon-svg-to-vue.mjs"
