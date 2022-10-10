@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 // ./cli/updater.mjs
 
+const cwd = process.env.INIT_CWD
+
 console.log('Hello World!')
+console.log(' ')
+
+console.log('The current working directory is:')
+console.log(cwd)
 console.log(' ')
 
 /*
