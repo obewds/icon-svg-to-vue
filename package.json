@@ -33,7 +33,8 @@
   },
   "homepage": "https://github.com/obewds/icon-svg-to-vue#readme",
   "dependencies": {
-    "fs-extra": "^10.1.0"
+    "fs-extra": "^10.1.0",
+    "yargs": "^17.6.0"
   },
   "devDependencies": {
     "auto-changelog": "^2.4.0"
