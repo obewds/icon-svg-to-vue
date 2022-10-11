@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "script": "node dist/icon-svg-to-vue.mjs",
+    "convert-fa-logo": "npm run script svgs/brands/font-awesome.svg output/components/fontAwesome/brands/FaBrandsFontAwesome.vue",
+    "create": "npm run convert-fa-logo",
     "changelog": "auto-changelog --package --unreleased --backfill-limit 20",
     "bump:patch": "npm version patch && npm run changelog",
     "bump:minor": "npm version minor && npm run changelog",
@@ -28,8 +30,9 @@
   },
   "homepage": "https://github.com/obewds/icon-svg-to-vue#readme",
   "dependencies": {
-    "fs-extra": "^10.1.0",
-    "yargs": "^17.6.0"
+    "beautify": "^0.0.8",
+    "chalk": "^5.1.0",
+    "fs-extra": "^10.1.0"
   },
   "devDependencies": {
     "auto-changelog": "^2.4.0"
