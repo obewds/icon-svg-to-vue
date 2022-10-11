@@ -39,7 +39,7 @@ The command requires two arguments.
 
 ### Examples
 
-Let's say you have some icon SVG markup from free icon providers like [FontAwesome](https://fontawesome.com/) or [Heroicons](https://heroicons.com/). For this example, we'll use FontAwesome's free `home.svg` and Heroicons' `backspace.svg` icons.
+Let's say you have some icon SVG markup from free icon providers like [FontAwesome](https://fontawesome.com/) or [Heroicons](https://heroicons.com/). For this example, we'll use FontAwesome's free `house.svg` and Heroicons' `backspace.svg` icons.
 
 Now let's assume you've brought them into your Vue project (along with any licensing files 😉), giving you the following hierarchy:
 
@@ -71,7 +71,7 @@ Now let's assume you've brought them into your Vue project (along with any licen
 
 #### SVG Paths and Files
 
-If we wanted to convert the `home.svg` and `backspace.svg` icons to Vue files using this package, we'd want to construct our two paths to the SVG files (without any leading dots or slashes).
+If we wanted to convert the `house.svg` and `backspace.svg` icons to Vue files using this package, we'd want to construct our two paths to the SVG files (without any leading dots or slashes).
 
 So for the `house.svg` icon, we'd get:
 
