@@ -39,7 +39,7 @@ The command requires two arguments.
 
 ### Examples
 
-Let's say you have some icon SVG markup from free icon providers like [FontAwesome](https://fontawesome.com/) or [Heroicons](https://heroicons.com/). For this example, we'll use FontAwesome's free `home.svg` and Heroicons' `backspace.svg` icons.
+Let's say you have some icon SVG markup from free icon providers like [FontAwesome](https://fontawesome.com/) or [Heroicons](https://heroicons.com/). For this example, we'll use FontAwesome's free `house.svg` and Heroicons' `backspace.svg` icons.
 
 Now let's assume you've brought them into your Vue project (along with any licensing files 😉), giving you the following hierarchy:
 
@@ -71,7 +71,7 @@ Now let's assume you've brought them into your Vue project (along with any licen
 
 #### SVG Paths and Files
 
-If we wanted to convert the `home.svg` and `backspace.svg` icons to Vue files using this package, we'd want to construct our two paths to the SVG files (without any leading dots or slashes).
+If we wanted to convert the `house.svg` and `backspace.svg` icons to Vue files using this package, we'd want to construct our two paths to the SVG files (without any leading dots or slashes).
 
 So for the `house.svg` icon, we'd get:
 
@@ -179,7 +179,7 @@ This means you could call your new components in a Vue and Tailwind CSS project 
 
 #### Mutations
 
-This package does mutates the source SVG code a tiny bit. Right now this mutation mainly focuses on the removing some downstream use blocking defaults from typical SVG icons from the two sets of icons in the examples above - IE FontAwesome and Heroicons.
+This package does mutate the source SVG code a tiny bit. Right now this mutation mainly focuses on the removing some downstream use blocking defaults from typical SVG icons from the two sets of icons in the examples above - IE FontAwesome and Heroicons.
 
 * In the case of the former, this package's command line script will change the characters `!--!` to just `!--`.
 * In the case of the latter, it will remove the strings ` class="w-6 h-6"` and ` class="w-5 h-5"`.
