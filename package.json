@@ -44,5 +44,14 @@
     "auto-changelog": "^2.4.0",
     "happy-dom": "^7.5.5",
     "vitest": "^0.24.1"
-  }
+  },
+  "keywords": [
+    "vue",
+    "vueventus",
+    "vite",
+    "tailwindcss",
+    "obewds",
+    "typescript",
+    "nodejs"
+  ]
 }
