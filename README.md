@@ -6,7 +6,7 @@ Tiny node-based utility scripts to convert icon svg markup to vue/typescript com
 
 <br>
 
-Check out the [CHANGELOG](https://github.com/obewds/vueventus/blob/main/CHANGELOG.md)
+Check out the [CHANGELOG](https://github.com/obewds/icon-svg-to-vue/blob/main/CHANGELOG.md)
 
 ---
 ## Documentation
