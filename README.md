@@ -179,7 +179,7 @@ This means you could call your new components in a Vue and Tailwind CSS project 
 
 #### Mutations
 
-This package does mutates the source SVG code a tiny bit. Right now this mutation mainly focuses on the removing some downstream use blocking defaults from typical SVG icons from the two sets of icons in the examples above - IE FontAwesome and Heroicons.
+This package does mutate the source SVG code a tiny bit. Right now this mutation mainly focuses on the removing some downstream use blocking defaults from typical SVG icons from the two sets of icons in the examples above - IE FontAwesome and Heroicons.
 
 * In the case of the former, this package's command line script will change the characters `!--!` to just `!--`.
 * In the case of the latter, it will remove the strings ` class="w-6 h-6"` and ` class="w-5 h-5"`.
