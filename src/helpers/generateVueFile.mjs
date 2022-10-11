@@ -1,4 +1,4 @@
-// ./dist/helpers/generateVueFile.mjs
+// ./src/helpers/generateVueFile.mjs
 
 import beautify from 'beautify'
 

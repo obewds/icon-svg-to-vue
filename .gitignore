@@ -1,3 +1,5 @@
 node_modules
 svgs
 output
+coverage
+.DS_Store
