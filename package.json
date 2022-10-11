@@ -1,20 +1,17 @@
 {
   "name": "@obewds/icon-svg-to-vue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Tiny node-based utility scripts to automate converting icon svg markup to vue and typescript components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "script": "node dist/icon-svg-to-vue.mjs",
+    "convert-fa-logo": "npm run script svgs/brands/font-awesome.svg output/components/fontAwesome/brands/FaBrandsFontAwesome.vue",
+    "create": "npm run convert-fa-logo",
     "changelog": "auto-changelog --package --unreleased --backfill-limit 20",
     "bump:patch": "npm version patch && npm run changelog",
     "bump:minor": "npm version minor && npm run changelog",
-    "bump:major": "npm version major && npm run changelog",
-    "bump:premajor": "",
-    "bump:preminor": "",
-    "bump:prepatch": "",
-    "bump:prerelease": "",
-    "bump:from-git": ""
+    "bump:major": "npm version major && npm run changelog"
   },
   "bin": {
     "icon-svg-to-vue": "./dist/icon-svg-to-vue.mjs"
@@ -33,8 +30,9 @@
   },
   "homepage": "https://github.com/obewds/icon-svg-to-vue#readme",
   "dependencies": {
-    "fs-extra": "^10.1.0",
-    "yargs": "^17.6.0"
+    "beautify": "^0.0.8",
+    "chalk": "^5.1.0",
+    "fs-extra": "^10.1.0"
   },
   "devDependencies": {
     "auto-changelog": "^2.4.0"
