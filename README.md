@@ -6,7 +6,7 @@ Tiny node-based utility scripts to convert icon svg markup to vue/typescript com
 
 <br>
 
-Check out the [CHANGELOG](https://github.com/obewds/vueventus/blob/main/CHANGELOG.md)
+Check out the [CHANGELOG](https://github.com/obewds/icon-svg-to-vue/blob/main/CHANGELOG.md)
 
 ---
 ## Documentation
@@ -189,7 +189,7 @@ All together this means you can control the sizing for your new SVG Vue componen
 
 #### Moving Forward
 
-> This package came to be after one too many issues from icon providers, even with their awesome JavaScript integrations. So this package essentially allows for Vue-ifying a couple of the major icon providers' icons in a very fast, easy and specific way so coders can get back to coding and stop messing with icons tech.
+> This package came to be after one too many issues from icon providers, even with their awesome JavaScript integrations. So this package essentially allows for Vue-ifying a couple of the major icon providers' icons in a very fast, easy and specific way so coders can get back to coding and stop losing time to icons libraries.
 
 That said, it'd be interesting to over time find out how this basic idea can be adapted to most of the free SVG icon providers out there!
 
