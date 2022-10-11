@@ -1,6 +1,6 @@
 {
   "name": "@obewds/icon-svg-to-vue",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tiny node-based utility scripts to convert icon svg markup to vue/typescript components",
   "main": "index.js",
   "scripts": {
