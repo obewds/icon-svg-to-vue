@@ -1,225 +1,63 @@
 #!/usr/bin/env node
-// ./cli/updater.mjs
+// ./dist/icon-svg-to-vue.mjs
+
+import beautify from 'beautify'
+import chalk from 'chalk'
+import fs from 'fs-extra'
+
+import generateVueFile from './helpers/generateVueFile.mjs'
 
 const cwd = process.env.INIT_CWD
-
-console.log('Hello World!')
-console.log(' ')
-
-console.log('The current working directory is:')
-console.log(cwd)
-console.log(' ')
-
-/*
-import fs from 'fs-extra'
-import inquirer from 'inquirer'
-
-import cliData from './helpers/cliData.mjs'
-import cwd from './helpers/cwd.mjs'
-import gradientText from './helpers/gradientText.mjs'
-import vvBrand from './helpers/vvBrand.mjs'
+const args = process.argv
 
 
-let userOptions = {
-    stackName: '',
-    stack: {},
-    installFileName: '',
-    installFile: {},
-    confirmation: false,
+if (args.length !== 4) {
+    console.error(chalk.redBright('You need to pass two arguments where:'))
+    console.error(chalk.red('  - 1st arg = path and filename to an (input) svg from your project root directory'))
+    console.error(chalk.red('  - 2nd arg = path and filename to the (output) vue component destination'))
+    console.log(' ')
+    process.exit()
 }
 
-const cliStackKeys = Object.keys(cliData.stacks)
 
-
-
-
-
-
-
-
-
-
-
-
-
-// show vv-install cli start message
-console.log(`
-
-
-    ${gradientText('Welcome to the VueVentus vv-update CLI utility!')}
-    ${gradientText('-----------------------------------------------')}
-    A utility to install/update individual VueVentus files.
-
-
-`)
-
-
-
-
-
-
-
-
-
-
-async function selectStack () {
-
-    let choices = []
-
-    cliStackKeys.forEach( (stack) => choices.push(cliData.stacks[stack].name) )
-    
-    const answers = await inquirer.prompt({
-        name: 'userStack',
-        type: 'list',
-        message: 'Which ' + vvBrand + ' stack are you using?\n',
-        choices: choices,
-    })
-
-    return answers.userStack
-}
-
-userOptions.stackName = await selectStack()
-
+console.error(chalk.yellowBright('CONVERTING SVG: ') + chalk.yellow(cwd + args[2]))
+console.error(chalk.yellowBright('TO VUE FILE:    ') + chalk.yellow(cwd + args[3]))
 console.log(' ')
 
 
+async function loadFileAsync (userSvgFilePath, userOutputFilePath) {
 
+    const originFile = cwd + '/' + userSvgFilePath
+    const outputFile = cwd + '/' + userOutputFilePath
 
+    await fs.pathExists(originFile).then( async (exists) => {
 
+        // file exists!
 
+        // read the file data asynchronously
+        fs.readFile(originFile, 'utf8', function(err, data) {
 
+            if (err) { throw err }
 
+            const cleanedData = data.replace(/!--!/g, '!--').replace(/></g, '>\n<')
+            
+            fs.outputFileSync(
+                outputFile,
+                generateVueFile( beautify(cleanedData, {format: 'html'} ),
+                userOutputFilePath
+            ), { flag: 'w+' })
 
+            console.log(chalk.greenBright('*****************************'))
+            console.log(chalk.greenBright('* SVG CONVERSION COMPLETED! *'))
+            console.log(chalk.greenBright('*****************************'))
+            console.log(' ')
 
+        })
 
-
-
-
-
-cliStackKeys.forEach( (stack) => {
-    if ( cliData.stacks[stack].name === userOptions.stackName ) {
-        userOptions.stack = cliData.stacks[stack]
-    }
-})
-
-let installerFilesData = {}
-let installerFileNames = []
-
-const userStackFiles = Object.keys(userOptions.stack.files)
-
-userStackFiles.forEach( (file) => {
-    installerFilesData[file] = userOptions.stack.files[file]
-    installerFileNames.push(userOptions.stack.files[file].name)
-})
-
-const userStackDeps = Object.keys(userOptions.stack.deps)
-
-userStackDeps.forEach( (dep) => {
-    
-    const depFiles = Object.keys(userOptions.stack.deps[dep].files)
-
-    depFiles.forEach( (file) => {
-    
-        installerFilesData[file] = userOptions.stack.deps[dep].files[file]
-        installerFileNames.push(userOptions.stack.deps[dep].files[file].name)
-
-    })
-
-})
-
-const userStackCompoFiles = Object.keys(userOptions.stack.compos)
-
-userStackCompoFiles.forEach( (file) => {
-    installerFilesData[file] = userOptions.stack.compos[file]
-    installerFileNames.push(userOptions.stack.compos[file].name)
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-async function selectFileToInstall () {
-    
-    const answers = await inquirer.prompt({
-        name: 'userStack',
-        type: 'list',
-        message: `Which ${gradientText(userOptions.stackName)} stack file would you like to install/update?\n`,
-        choices: installerFileNames.sort(),
-    })
-
-    return answers.userStack
-}
-
-userOptions.installFileName = await selectFileToInstall()
-
-console.log(' ')
-
-
-
-
-
-
-
-
-
-
-
-const installerFilesKeys = Object.keys(installerFilesData)
-
-installerFilesKeys.forEach( (file) => {
-    if ( installerFilesData[file].name === userOptions.installFileName ) {
-        userOptions.installFile = installerFilesData[file]
-    }
-})
-
-async function confirmFileToInstall () {
-    
-    const answers = await inquirer.prompt({
-        name: 'confirmFile',
-        type: 'confirm',
-        message: `Are you sure you want to install a new ${gradientText('.' + userOptions.installFile.path + userOptions.installFile.name)} file?\n`,
-        default: false,
-    })
-
-    return answers.confirmFile
-}
-
-userOptions.confirmation = await confirmFileToInstall()
-
-console.log(' ')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if (userOptions.confirmation === true) {
-
-    fs.outputFileSync(cwd + userOptions.installFile.path + userOptions.installFile.name, userOptions.installFile.src, { flag: 'w+' })
-
-    console.log(`\n${gradientText('.' + userOptions.installFile.path + userOptions.installFile.name) + ' was installed successfully!'}\n`)
+    }).catch( (error) => { throw error } )
 
 }
 
-if (userOptions.confirmation === false) {
-    console.log(`\n${gradientText('No files were installed/updated.')}\n`)
-}
-*/
+
+await loadFileAsync(args[2], args[3])
+
