@@ -43,7 +43,7 @@
     "@vitest/coverage-c8": "^0.24.1",
     "auto-changelog": "^2.4.0",
     "happy-dom": "^7.5.5",
-    "vitest": "^0.24.1"
+    "vitest": "^0.24.3"
   },
   "keywords": [
     "vue",
