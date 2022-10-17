@@ -36,14 +36,14 @@
   "homepage": "https://github.com/obewds/icon-svg-to-vue#readme",
   "dependencies": {
     "beautify": "^0.0.8",
-    "chalk": "^5.1.0",
+    "chalk": "^5.1.2",
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
-    "@vitest/coverage-c8": "^0.24.1",
+    "@vitest/coverage-c8": "^0.24.3",
     "auto-changelog": "^2.4.0",
-    "happy-dom": "^7.5.5",
-    "vitest": "^0.24.1"
+    "happy-dom": "^7.5.12",
+    "vitest": "^0.24.3"
   },
   "keywords": [
     "vue",
