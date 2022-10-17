@@ -40,7 +40,7 @@
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
-    "@vitest/coverage-c8": "^0.24.1",
+    "@vitest/coverage-c8": "^0.24.3",
     "auto-changelog": "^2.4.0",
     "happy-dom": "^7.5.5",
     "vitest": "^0.24.1"
