@@ -36,7 +36,7 @@
   "homepage": "https://github.com/obewds/icon-svg-to-vue#readme",
   "dependencies": {
     "beautify": "^0.0.8",
-    "chalk": "^5.1.2",
+    "chalk": "^5.2.0",
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
