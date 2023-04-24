@@ -42,7 +42,7 @@
   "devDependencies": {
     "@vitest/coverage-c8": "^0.24.3",
     "auto-changelog": "^2.4.0",
-    "happy-dom": "^7.6.0",
+    "happy-dom": "^9.9.2",
     "vitest": "^0.24.3"
   },
   "keywords": [
